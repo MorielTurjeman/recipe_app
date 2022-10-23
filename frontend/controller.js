@@ -15,6 +15,7 @@ class Controller {
         if (search) {
             search.addEventListener('click', (event) => this.getRecipes());
         }
+        $("#results").on("click", ".card-img-top", (event) => this.alert_ing(event));
     }
     getRecipes() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -23,6 +24,11 @@ class Controller {
             const dairy = document.querySelector("#dairy").checked;
             this.model.getRecipes(ing, dairy, gluten).then(res => renderRecipes(res));
         });
+    }
+    // $("#results").on("click", ".addToDreamTeam", (event) => this.addToDreamTeam(event))
+    alert_ing(event) {
+        const recipe = event.target.closest(".card").dataset.ing;
+        alert(recipe);
     }
 }
 const controller = new Controller();

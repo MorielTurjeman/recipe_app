@@ -30,7 +30,7 @@
 
         <script id="recipes-template" type="text/x-handlebars-template">
             {{#each recipes}}
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;" data-ing="{{ingredients.[0]}}">
                 <img src="{{thumbnail}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{title}}</h5>
