@@ -1,9 +1,12 @@
 "use strict";
-/* function renderExample(player: Player[]) {
+const recipeSource = $("#recipes-template").html();
+function renderRecipes(recipes) {
+    console.log(recipes);
     $("#results").empty();
-    const template = Handlebars.compile(playerSource)
+    const template = Handlebars.compile(recipeSource);
+    console.log(template);
     // console.log(template)
-    const newHtml = template({ player })
-    $("#results").append(newHtml)
-
-} */ 
+    const newHtml = template({ recipes });
+    console.log(newHtml);
+    $("#results").append(newHtml);
+}

@@ -1,7 +1,8 @@
-// class Model {
-//     async get_pokemon(pokemon_name: string) {
+class Model {
+    async getRecipes(ingredient: string, filterDairy: boolean, filterGluten: boolean) {
 
-//         const trainers = await $.get(`/pokemons/${pokemon_name}`)
+        const recipes = await $.get(`/recipes/${ingredient}?filter_dairy=${filterDairy}&filter_gluten=${filterGluten}`)
+        return recipes
 
-//     }
-// }
+    }
+}
